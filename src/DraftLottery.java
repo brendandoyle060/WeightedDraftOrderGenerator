@@ -8,13 +8,13 @@ public class DraftLottery {
 	Player brendan = new Player("Brendan", 12);
 	Player megan = new Player("Megan", 10);
 	Player carty = new Player("Carty", 9);
+	Player cody = new Player("Cody", 9);
+	Player becca = new Player("Becca", 9);
+	Player kurt = new Player("Kurt", 9);
 	Player gorms = new Player("Gorms", 8);
 	Player max = new Player("Max", 7);
 	Player zach = new Player("Zach", 6);
 	Player brian = new Player("Brian", 5);
-	Player conor = new Player("Conor", 4);
-//	Player  = new Player("", );
-//	Player  = new Player("", );
 		
 	ArrayList<Player> players = new ArrayList<Player>();
 	ArrayList<Player> draftOrder = new ArrayList<Player>();
@@ -25,11 +25,16 @@ public class DraftLottery {
 		players.add(brendan);
 		players.add(megan);
 		players.add(carty);
+		players.add(cody);
+		players.add(becca);
+		players.add(kurt);
 		players.add(gorms);
 		players.add(max);
 		players.add(zach);
 		players.add(brian);
-		players.add(conor);
+		
+		System.out.println("Number of players in league: " + players.size());
+		System.out.println("Total of player odds: " + sumOfOdds() + "\n");
 	}
 	
 	private int sumOfOdds() {
@@ -46,7 +51,7 @@ public class DraftLottery {
 		return randomInt;
 	}
 	
-	private Player removeSelection(Player p) {
+	private Player removeSelectionFromList(Player p) {
 		players.remove(p);
 		return p;
 	}
@@ -71,13 +76,24 @@ public class DraftLottery {
 	
 	private void printOrder() {
 		for(int i = 0; i < draftOrder.size(); i++) {
-			System.out.println((i + 1) + ". " + draftOrder.get(i));
+			System.out.println((i + 1) + ". " + draftOrder.get(i).getName());
 		}
 	}
 	
 	public static void main(String[] args) {
 		DraftLottery dl = new DraftLottery();
 		dl.initializePlayerList();
+		
+		int numberOfTeams = dl.players.size();
+		
+		for (int i = 0; i < numberOfTeams; i++) {
+			Player pick = dl.determineSelection();
+			dl.addSelectionToOrder(pick);
+			dl.removeSelectionFromList(pick);
+		}
+		
+		dl.printOrder();
+		
 	}
 
 }
