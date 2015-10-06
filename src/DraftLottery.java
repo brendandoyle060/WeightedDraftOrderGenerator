@@ -3,19 +3,19 @@ import java.util.Random;
 
 public class DraftLottery {
 
-	Player sebastian = new Player("Sebastian", 20);
-	Player dan = new Player("Dan", 14);
-	Player brendan = new Player("Brendan", 12);
-	Player megan = new Player("Megan", 10);
-	Player carty = new Player("Carty", 9);
-	Player cody = new Player("Cody", 9);
-	Player becca = new Player("Becca", 9);
-	Player kurt = new Player("Kurt", 9);
-	Player gorms = new Player("Gorms", 8);
-	Player max = new Player("Max", 7);
-	Player zach = new Player("Zach", 6);
+	Player sebastian = new Player("Sebastian", 50);
+	Player dan = new Player("Dan", 40);
+	Player brendan = new Player("Brendan", 35);
+	Player megan = new Player("Megan", 30);
+	Player carty = new Player("Carty", 25);
+	Player cory = new Player("Cory", 25);
+	Player becca = new Player("Becca", 25);
+	Player kurt = new Player("Kurt", 25);
+	Player gorms = new Player("Gorms", 20);
+	Player max = new Player("Max", 15);
+	Player zach = new Player("Zach", 10);
 	Player brian = new Player("Brian", 5);
-		
+	
 	ArrayList<Player> players = new ArrayList<Player>();
 	ArrayList<Player> draftOrder = new ArrayList<Player>();
 	
@@ -25,7 +25,7 @@ public class DraftLottery {
 		players.add(brendan);
 		players.add(megan);
 		players.add(carty);
-		players.add(cody);
+		players.add(cory);
 		players.add(becca);
 		players.add(kurt);
 		players.add(gorms);
